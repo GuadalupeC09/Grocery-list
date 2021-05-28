@@ -1,0 +1,99 @@
+*,
+*::before,
+*::after{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+
+body{
+    background:#404242;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top:55px;
+    height:500px;
+    width:500px;
+}
+
+.handle{
+    position: absolute;
+    top:65%;
+    background: #000;
+    border-radius:25px;
+    border:2px inset rgb(95,89,95);
+    height:100px;
+    width:45px;
+    transform: rotate(45deg);
+    animation:float 5s linear infinite;
+}
+.handle::before {
+content: "";
+position: absolute;
+bottom:80px;
+left:-24px;
+height:25px;
+width:100px;
+background:rgb(3, 3, 3);
+border: 2px solid rgb(95,89,95);
+}
+label {
+    position: relative;
+    display: block;
+    left:8px;
+    bottom: 340px;
+    height:330px;
+    width:30px;
+    border-top-left-radius:30px;
+    border-top-right-radius:30px;
+    animation: glow 10s linear infinite;
+    animation-play-state: paused;
+}
+@keyframes glow {
+        25% {
+        background: rgb(255, 255, 255);
+        box-shadow: 0px -10px 33px 20px rgb(24, 8, 245), 0px -10px 23px 20px rgb(30, 45, 252), 0px -10px 13px 10px rgb(55, 91, 250);
+        }
+        50% {
+        background: rgb(255, 255, 255);
+        box-shadow: 0px -10px 33px 20px rgb(229, 245, 8), 0px -10px 23px 20px rgb(206, 241, 7), 0px -10px 13px 10px rgb(238, 234, 10);
+        }
+        100% {
+        background: rgb(255, 255, 255);
+        box-shadow: 0px -10px 33px 20px rgb(245, 8, 233), 0px -10px 23px 20px rgb(219, 9, 202), 0px -10px 13px 10px rgb(253, 36, 224);
+        }
+        }
+input[type="checkbox"] {
+        position: absolute;
+        top: 30px;
+        left: 10px;
+        -webkit-appearance: none;
+        appearance: none;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: rgb(247, 7, 7);
+        outline: none;
+    }
+    input[type="checkbox"]:checked {
+        background-color: rgb(0, 255, 13);
+    }
+    input[type="checkbox"]:checked + label {
+        animation-play-state: running;
+    }
+.shadow {
+        background: rgba(27, 27, 27, 0.315);
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 185px;
+        height: 20px;
+        width: 120px;
+        transform: rotate(180deg);
+    }
